@@ -1,0 +1,25 @@
+Punto di partenza: l'eseguibile https://github.com/gwastro/pycbc/blob/master/bin/pygrb/pycbc_make_grb_summary_page
+sfrutta css e js files che vivono in https://git.ligo.org/francesco-pannarale/lalsuite/tree/master/lalapps/src/ring/coh_PTF_config_files
+
+Punto di arrivo: avere pagine di risultati conformi a quelle generate da https://github.com/gwastro/pycbc/blob/master/bin/pycbc_make_html_page
+che sfrutta invece i files che sono in https://github.com/gwastro/pycbc/tree/master/pycbc/results/static
+
+==== Dipendenze da PyLAL ===
+Risultato di una ricerca di "from pylal" in gwastro/pycbc/master:
+ * pycbc/results/legacy_grb.py: from pylal import antenna
+ * bin/pycbc_fit_sngl_trigs: from pylal import SnglInspiralUtils as sniuls
+ * bin/pygrb/pycbc_make_grb_summary_page: from pylal import grbsummary,rate,antenna,git_version
+ * bin/pygrb/pycbc_make_offline_grb_workflow: from pylal import pygrb_cohptf_pp
+
+Risultato di una ricerca di "import pylal" in gwastro/pycbc/master: nessuno
+
+In ginoContestabile/pycbc/pygrb_pp_rewrite/bin/pygrb/pycbc_pygrb_sbv_plotter abbiamo:
+ * from pylal import MultiInspiralUtils
+ * from pylal.dq import dqSegmentUtils
+ * from pylal.coh_PTF_pyutils import get_bestnr, calculate_contours, readSegFiles, get_det_response
+
+In ginoContestabile/pycbc/pygrb_pp_rewrite/bin/pygrb/pycbc_cohptf_efficiency abbiamo:
+ * from pylal import SimInspiralUtils,MultiInspiralUtils,plotutils,git_version
+ * from pylal.dq import dqSegmentUtils,dqHTMLUtils
+ * from pylal.coh_PTF_pyutils import get_bestnr, readSegFiles, get_f_resp, sim_inspiral_get_theta # makePaperPlots
+  
